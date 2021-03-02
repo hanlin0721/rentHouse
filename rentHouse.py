@@ -15,11 +15,17 @@ driver = webdriver.Chrome('./chromedriver', chrome_options=chrome_options)
 email = ''
 password = ''
 
+f = open('./user.txt')
+userInfoArray = f.readlines()
+
+email = userInfoArray[0].rstrip("\n")
+password = userInfoArray[1]
+
 driver.get("https://www.facebook.com/")
 driver.find_element_by_id('email').send_keys(email)
 driver.find_element_by_id('pass').send_keys(password)
 driver.find_element_by_name('login').click()
 
-sleep(1)
+#sleep(1)
 
-driver.get('https://www.facebook.com/groups/464870710346711/?ref=share')
+#driver.get('https://www.facebook.com/groups/464870710346711/?ref=share')
