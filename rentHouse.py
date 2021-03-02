@@ -2,6 +2,8 @@
 from selenium import webdriver
 from time import sleep
 
+# 使用前請先下載符合自己 Chrome 版本的 WebDriver https://sites.google.com/a/chromium.org/chromedriver/downloads
+
 # 設定 driver 實例
 chrome_options = webdriver.ChromeOptions()
 prefs = {"profile.default_content_setting_values.notifications" : 2}
