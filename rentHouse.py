@@ -11,10 +11,7 @@ chrome_options.add_experimental_option("prefs",prefs)
 # 建立 driver 實例
 driver = webdriver.Chrome('./chromedriver', chrome_options=chrome_options)
 
-# 填入 臉書信箱(手機號碼)、密碼
-email = ''
-password = ''
-
+# 請額外建立 user.txt 存放臉書信箱(手機號碼)、密碼以供程式進行自動登入
 f = open('./user.txt')
 userInfoArray = f.readlines()
 
@@ -26,6 +23,6 @@ driver.find_element_by_id('email').send_keys(email)
 driver.find_element_by_id('pass').send_keys(password)
 driver.find_element_by_name('login').click()
 
-#sleep(1)
+sleep(1)
 
-#driver.get('https://www.facebook.com/groups/464870710346711/?ref=share')
+driver.get('https://www.facebook.com/groups/464870710346711/?ref=share')
